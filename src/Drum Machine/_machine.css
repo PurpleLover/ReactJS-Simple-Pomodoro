@@ -1,0 +1,37 @@
+body {
+  font-size: 90%;
+  background-color: darkgrey;
+}
+
+.container {
+  margin: 20%;
+  padding: 2%;
+  border: 2px solid coral;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.keypads {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "main main main" "main main main" "main main main";
+  grid-gap: 1%;
+}
+
+.keypads__keys {
+  padding: 20px 30px;
+}
+
+.controller {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
