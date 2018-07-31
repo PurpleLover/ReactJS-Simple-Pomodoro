@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Timer from './Component/Timer';
 
 // import {} from '../src/Common/constant';
 
@@ -116,7 +117,7 @@ class App extends Component {
     }
   }
 
-  zeroPad = (val) => val < 10 ? '0' + val : val;
+
 
   render() {
     return (
@@ -165,10 +166,11 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div>
-          <p id="timer-label">{this.state.phase}</p>
-          <span id="time-left">{this.zeroPad(this.state.timeLeft.minutes) + ':' + this.zeroPad(this.state.timeLeft.seconds)}</span>
-        </div>
+
+        <Timer 
+          label={this.state.phase}
+          time={this.state.timeLeft}  
+        />
 
         <div>
           <button onClick={this.toggleCountDown} id="start_stop">START/STOP</button>
